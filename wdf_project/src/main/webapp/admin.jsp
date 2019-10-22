@@ -1,7 +1,7 @@
 <%@ taglib prefix="s" uri ="/struts-tags" %>
 <div class="admin">
 	<h1>Hello administrator <s:property value="#session.name"/></h1>
-	<p>Some changes made</p>
+	<p>User interface will be improved in the future</p>
 	<p><s:a action="Logout">Logout</s:a></p>
 	<h2>Database Search</h2>
 	<s:form action="AdminSearch">
