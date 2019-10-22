@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="struts" extends="struts-default">
+		
+		<action name="index">
+			<result>/index.jsp</result>
+		</action>
+		
+		<action name="CreateUser" class="struts2.action.CreateUser" method="execute">
+			<result name="input">/registration.jsp</result>
+			<result name="success">/registrationSuccess.jsp</result>
+		</action>
+		
+		<action name="UserLogin" class="struts2.action.UserLogin" method="login">
+			<result name="input">/login.jsp</result>
+			<result name="success">/home.jsp</result>
+			<result name="admin">/admin.jsp</result>
+		</action>
+		
+		<action name="Logout" class="struts2.action.UserLogin" method="logout">
+			<result name="success">/index.jsp</result>
+		</action>
+		
+		<action name="CheckUser" class="struts2.action.ResetPassword" method="checkUser">
+			<result name="success">/forgotpwChange.jsp</result>
+			<result name="input">/forgotpw.jsp</result>			
+		</action>
+		
+		<action name="ChangePassword" class="struts2.action.ResetPassword" method="changePassword">
+			<result name="success">/forgotpwSuccess.jsp</result>
+			<result name="input">/forgotpwChange.jsp</result>
+		</action>
+		
+		<action name="Search" class="struts2.action.Search" method="execute">
+			<result name="success">/search.jsp</result>
+		</action>
+		
+		<action name="UserProfile" class="struts2.action.UserProfile" method="execute">
+			<result name="success">/userprofile.jsp</result>
+		</action>
+		
+		<action name="PullUser" class="struts2.action.UpdateUser" method="pullUser">
+			<result name="success">/updateuser.jsp</result>
+		</action>
+		
+		<action name="UpdateUser" class="struts2.action.UpdateUser" method="updateUser">
+			<result name="success">/updateuserSuccess.jsp</result>
+			<result name="input">/updateuser.jsp</result>
+		</action>
+		
+		<action name="PullUserExperience" class="struts2.action.UpdateExperience" method="pullUserExperience">
+			<result name="success">/updateuserexperience.jsp</result>
+		</action>
+		
+		<action name="UpdateUserExperience" class="struts2.action.UpdateExperience" method="updateUserExperience">
+			<result name="input" type="redirectAction">
+				<param name="actionName">PullUserExperience</param>
+				<param name="error">true</param>
+			</result>
+			<result name="success">/updateuserexperienceSuccess.jsp</result>
+		</action>
+		
+		<action name="DeleteUserExperience" class="struts2.action.UpdateExperience" method="deleteUserExperience">
+			<result name="input" type="redirectAction">
+				<param name="actionName">PullUserExperience</param>
+				<param name="error">true</param>
+			</result>
+			<result name="success">/updateuserexperienceSuccess.jsp</result>
+		</action>
+		
+		<action name="InsertUserExperience" class="struts2.action.UpdateExperience" method="insertUserExperience">
+			<result name="input">/insertuserexperience.jsp</result>
+			<result name="success">/updateuserexperienceSuccess.jsp</result>
+		</action>
+		
+		<action name="PullUserEducation" class="struts2.action.UpdateEducation" method="pullUserEducation">
+			<result name="success">/updateusereducation.jsp</result>
+		</action>
+		
+		<action name="UpdateUserEducation" class="struts2.action.UpdateEducation" method="updateUserEducation">
+			<result name="input" type="redirectAction">
+				<param name="actionName">PullUserEducation</param>
+				<param name="error">true</param>
+			</result>
+			<result name="success">/updateusereducationSuccess.jsp</result>
+		</action>
+		
+		<action name="DeleteUserEducation" class="struts2.action.UpdateEducation" method="deleteUserEducation">
+			<result name="input" type="redirectAction">
+				<param name="actionName">PullUserEducation</param>
+				<param name="error">true</param>
+			</result>
+			<result name="success">/updateusereducationSuccess.jsp</result>
+		</action>
+		
+		<action name="InsertUserEducation" class="struts2.action.UpdateEducation" method="insertUserEducation">
+			<result name="input">/insertusereducation.jsp</result>
+			<result name="success">/updateusereducationSuccess.jsp</result>
+		</action>
+		
+		<action name="AdminSearch" class="struts2.action.Administrator" method="search">
+			<result name="success">/admin.jsp</result>
+		</action>
+		
+		<action name="AdminUserProfile" class="struts2.action.Administrator" method="userProfile">
+			<result name="success">/admin.jsp</result>
+			<result name="input">/admin.jsp</result>
+		</action>
+		
+		<action name="AdminChangePassword" class="struts2.action.ResetPassword" method="changePassword">
+			<result name="success" type="chain">
+				<param name="actionName">AdminUserProfile</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">AdminUserProfile</param>
+			</result>
+		</action>
+		
+		<action name="DeleteUser" class="struts2.action.Administrator" method="deleteUser">
+			<result name="success">/admin.jsp</result>
+			<result name="input">/admin.jsp</result>
+		</action>
+		
+		<action name="RetrieveMailingList" class="struts2.action.Administrator" method="retrieveMailingList">
+			<result name="success">/admin.jsp</result>
+		</action>
+		
+		<action name="AddMailingList" class="struts2.action.Administrator" method="addMailingList">
+			<result name="success" type="chain">
+				<param name="actionName">RetrieveMailingList</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">RetrieveMailingList</param>
+			</result>
+		</action>
+		
+		<action name="DeleteMailingList" class="struts2.action.Administrator" method="deleteMailingList">
+			<result name="success" type="chain">
+				<param name="actionName">RetrieveMailingList</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">RetrieveMailingList</param>
+			</result>
+		</action>
+
+		<action name="SendBulkMail" class="struts2.action.Administrator" method="sendBulkMail">
+			<result name="success" type="chain">
+				<param name="actionName">RetrieveMailingList</param>
+			</result>
+		</action>
+		
+	</package>
+</struts>

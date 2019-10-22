@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+  	<groupId>org.apache.struts</groupId>
+  	<artifactId>wdf_project</artifactId>
+  	<packaging>war</packaging>
+  	<version>1.0.0</version>
+  	<name>wdf_project Maven Webapp</name>
+  	<url>http://maven.apache.org</url>
+  
+  	<dependencies>
+  		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.17</version>
+		</dependency>
+  		
+  		<dependency>
+		    <groupId>org.apache.struts</groupId>
+		    <artifactId>struts2-junit-plugin</artifactId>
+		    <version>2.5.20</version>
+		    <scope>test</scope>
+		</dependency>
+		
+	    <dependency>
+		    <groupId>org.apache.struts</groupId>
+		    <artifactId>struts2-core</artifactId>
+		    <version>2.5.20</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-core</artifactId>
+		    <version>2.11.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-api</artifactId>
+		    <version>2.11.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.jasypt</groupId>
+		    <artifactId>jasypt</artifactId>
+		    <version>1.9.3</version>
+		</dependency>
+		
+		<dependency>
+		  <groupId>org.simplejavamail</groupId>
+		  <artifactId>simple-java-mail</artifactId>
+		  <version>5.5.1</version>
+		</dependency>
+		
+  	</dependencies>
+  
+	<build>
+	  	<finalName>wdf_project</finalName>
+		<plugins>
+			<plugin>
+		        <groupId>org.eclipse.jetty</groupId>
+		        <artifactId>jetty-maven-plugin</artifactId>
+		        <version>9.4.20.v20190813</version>
+		        <configuration>
+		            <webApp>
+		                <contextPath>/${project.artifactId}</contextPath>
+		            </webApp>
+		            <stopKey>CTRL+C</stopKey>
+		            <stopPort>8999</stopPort>
+		            <scanIntervalSeconds>10</scanIntervalSeconds>
+		            <scanTargets>
+		                <scanTarget>src/main/webapp/WEB-INF/web.xml</scanTarget>
+		            </scanTargets>
+		        </configuration>
+		    </plugin>
+		</plugins>
+	</build>
+</project>

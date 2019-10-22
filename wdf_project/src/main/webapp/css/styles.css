@@ -1,0 +1,511 @@
+@charset "UTF-8";
+
+/* Global Styles
+-------------------*/
+* {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+/* Header
+-------------------*/
+.topbar {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #2DE57D; 
+	justify-content: space-around;
+	overflow: hidden;
+}
+
+.topbar a {
+	text-decoration: none;
+	color: #564946;
+}
+
+.topbar-brand a {
+	display: inline-block;
+	line-height: 50px;
+	padding: 0 10px;
+}
+
+.topbar-search {
+	line-height: 50px;
+	flex-basis: 540px;
+}
+
+.topbar-searchform {
+	padding: 0 5px;
+}
+
+.topbar-searchbar {
+	width: 80%;
+	height: 20px;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.topbar-searchicon {
+	width: 12%;
+	padding: 5px;
+}
+
+.topbar-user-buttons a {
+	display: inline-block;
+	line-height: 50px;
+	padding: 0 10px;
+}
+
+.dropdown-button {
+	background-color: inherit;
+	color: #564946;
+	padding: 0 10px;
+	border: none;
+	line-height: 50px;
+	outline: none;
+	font-size: 16px;
+}
+
+.topbar a:hover, .topbar button:hover {
+	background-color: #69EBD0;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;	
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 840px) {
+	.topbar-search {
+		order: 3;
+	}
+	
+	.topbar-user-buttons {
+		order: 2;
+	}
+}
+
+
+/* Main content
+-------------------*/
+
+/* index.jsp */
+
+.index1, .index2 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 20px 15px;
+	color: #564946;
+}
+
+.index1-text, .index2-text {
+	width: 440px;
+	align-self: center;
+	padding: 0 30px 20px 30px;
+}
+
+.index1 a {
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px 20px;
+	border: 1px solid #564946;
+	border-radius: 5px;
+	color: #564946;
+}
+
+.index1 a:hover {
+	background-color: #2DE57D;
+	color: white;
+	border: 1px solid #2DE57D;
+}
+
+.index1-pic img, .index2-pic img {
+  	max-width: 100%;
+  	height: auto;
+}
+
+.index2 {
+	background-color: #558564;
+	padding: 20px 15px;
+	flex-wrap: wrap-reverse;
+	color: white;
+}
+
+.index2 a {
+	text-decoration: none;
+	color: white;
+	display: inline-block;
+	padding: 10px 20px;
+	border: 1px solid white;
+	border-radius: 5px;
+}
+
+.index2 a:hover {
+	background-color: white;
+	color: #558564;
+	border: 1px solid #558564;
+}
+
+.index3 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 300px;
+	color: #564946;
+}
+
+.index3-searchform {
+	width: 80%;
+	max-width: 500px;
+}
+
+.index3-searchbar {
+	height: 45px;
+	width: 100%;
+	padding: 5px;
+	margin: 20px 0;
+}
+
+.index3-searchicon {
+	height: 25px;
+	width: 75px;
+}
+
+/* registration.jsp */
+.registration {
+	display: flex;
+	flex-flow: row wrap;
+	background-color: #558564;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 0;
+	min-height: 600px;
+}
+
+.registration-text {
+	padding: 20px 15px;
+}
+
+.registration-form {
+	width: 90%;
+	max-width: 400px;
+	padding-bottom: 20px;
+}
+
+.registration-form td {
+	display: block;
+}
+
+.registration-form table {
+	width: 100%;
+}
+
+.registration-form input {
+	width: 100%;
+	height: 30px;
+	border: none;
+	margin-bottom: 20px;
+}
+
+.registration-form .formButton input {
+	color: white;
+	background-color: #558564;
+	border: 1px solid white;
+	border-radius: 5px;
+	width: 100%;
+	padding: 0;
+}
+
+.registration-form .formButton input:hover {
+	background-color: white;
+	color: #558564;
+	border: 1px solid #558564;
+}
+
+.registration-form p {
+	text-align: center;
+}
+
+.registration-form a {
+	text-decoration: none;
+	color: #69EBD0;
+}
+
+.registration-form a:hover {
+	text-decoration: underline;
+}
+
+.registration-form .errorMessage {
+	list-style-type: none;
+	color: #900e0e;
+	padding: 20px;
+}
+
+/* login.jsp */
+.login {
+	display: flex;
+	flex-flow: column wrap;
+	background-color: #558564;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	min-height: 600px;
+}
+
+.login-text {
+	padding: 20px 15px;
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	max-width: 400px;
+}
+
+.login-form form, .login-form input, .login-form button {
+	display: block;
+	width: 100%;
+	border: none;
+}
+
+.login-form input, .login-form button {
+	height: 40px;
+	margin: 20px 0;
+}
+
+.login-form button {
+	color: white;
+	background-color: #558564;
+	border: 1px solid white;
+	border-radius: 5px;
+}
+
+.login-form button:hover {
+	background-color: white;
+	color: #558564;
+	border: 1px solid #558564;
+}
+
+.login-form p {
+	margin: 10px 0;
+}
+
+.login-form a {
+	text-decoration: none;
+	color: #69EBD0;
+}
+
+.login-form a:hover {
+	text-decoration: underline;
+}
+
+/* forgotpw.jsp & forgotpwChange.jsp*/
+.forgotpw, .forgotpwchange {
+	margin: 20px 15px;
+	color: #564946;
+}
+
+.forgotpw h3, .forgotpw p, .forgotpwchange h3, .forgotpwchange p {
+	padding: 10px 0;
+}
+
+.forgotpw input, .forgotpwchange input {
+	width: 98%;
+	max-width: 400px;
+	height: 30px;
+	margin-bottom: 20px;
+}
+
+.forgotpw a, .forgotpwchange a {
+	display: inline-block;
+	text-decoration: none;
+	color: #564946;
+	width: 40%;
+	max-width: 150px;
+	height: 30px;
+	border: 1px solid #564946;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 30px;
+	box-sizing: border-box;
+}
+
+.forgotpw a:hover, .forgotpwchange a:hover{
+	background-color: #2DE57D;
+	color: white;
+	border: 1px solid #2DE57D;
+}
+
+.forgotpw button, .forgotpwchange button {
+	color: white;
+	background-color: #558564;
+	border: 1px solid white;
+	width: 40%;
+	max-width: 150px;
+	height: 30px;
+	border-radius: 5px;
+	margin: 0 10px;
+	font-size: 16px;
+}
+
+.forgotpw button:hover, .forgotpwchange button:hover {
+	background-color: #564946;
+}
+
+@media screen and (min-width: 840px) {
+	.forgotpw, .forgotpwchange {
+		padding: 50px 100px;
+	}
+}
+
+/* registrationSuccess.jsp */
+.registration-success {
+	padding: 100px;
+}
+
+.registration-success p {
+	margin: 50px 0;
+}
+
+.registration-success a {
+	text-decoration: none;
+}
+
+.registration-success a:hover {
+	text-decoration: underline;
+}
+
+/* home.jsp */
+.home1, .home2 {
+	width: 100%;
+	min-height: 400px;
+	line-height: 400px;
+	text-align: center;
+}
+
+.home2 {
+	background-color: #69EBD0;
+}
+
+/* search.jsp */
+.numberofresults {
+	width: 70%;
+	margin: 10px auto;
+	color: grey;
+}
+
+.listofresults ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 20px 15px;
+}
+
+.listofresults li {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e6e9ec;
+	margin: 0 auto 20px;
+	max-width: 70%;
+	position: relative;
+}
+
+.listofresults a {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.listofresults a:hover {
+	border: 1px solid grey;
+}
+
+/* userprofile.jsp */
+.userprofile, .userexperience, .usereducation {
+	width: 80%;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+.userprofile table, .userexperience table, .usereducation table {
+	padding: 10px 0;
+}
+
+.userprofile td, .userexperience td, .usereducation td {
+	min-width: 120px;
+}
+
+.userprofile a, .userexperience a, .usereducation a{
+	display: inline-block;
+	text-decoration: none;
+	color: #558564;
+	padding: 10px;
+}
+
+.userprofile a:hover, .userexperience a:hover, .usereducation a:hover {
+	text-decoration: underline;
+}
+
+.userprofile button, .userexperience button, .usereducation button {
+	display: inline-block;
+	padding: 0;
+	border: none;
+	color: #558564;
+	background-color: white;
+	font-size: 16px;
+	padding: 10px;
+}
+
+.userprofile button:hover, .userexperience button:hover, .usereducation button:hover {
+	text-decoration: underline;
+}
+
+/* Footer
+-------------------*/
+
+footer {
+	text-align: center;
+	padding: 20px 0;
+	border-top: 1px solid #564946;
+	color: #564946;
+}
+
+footer a {
+	text-decoration: none;
+	color: #564946;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
