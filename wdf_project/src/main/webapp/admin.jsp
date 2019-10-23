@@ -27,6 +27,7 @@
 	</s:if>
 		
 	<s:if test="method=='search'">
+		<h3>Search Results</h3>
 		<s:if test="searchList.size()>0">
 			<table>
 				<tr>
@@ -171,7 +172,7 @@
 	</s:elseif>
 	
 	<s:elseif test="method=='mailingList'">
-		<h3>Mailing List</h3>
+		<h2>Mailing List</h2>
 		<table>
 			<tr>
 				<td>mail_name</td>
