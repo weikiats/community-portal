@@ -257,7 +257,7 @@ public class Administrator extends ActionSupport {
 				.buildEmail();
 		
 		Mailer mailer = MailerBuilder
-				.withSMTPServer("smtp.gmail.com", 587, "abcjobsburner@gmail.com", "abcjobs2019")
+				.withSMTPServer("server", 587, "username", "password")
 				.withTransportStrategy(TransportStrategy.SMTP_TLS)
 				.buildMailer();
 		
