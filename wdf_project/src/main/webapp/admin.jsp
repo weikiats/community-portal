@@ -45,7 +45,7 @@
 			</table>
 		</s:if>
 		<s:else>
-			<p>No results. PLease search again.</p>
+			<p>No results. Please search again.</p>
 		</s:else>
 	</s:if>
 	<s:elseif test="method=='userProfile'&&result!=2">
