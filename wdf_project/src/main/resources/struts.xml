@@ -130,7 +130,7 @@
 			<result name="input">/admin.jsp</result>
 		</action>
 		
-		<action name="something" class="struts2.action.Administrator" method="retrieveMailingList">
+		<action name="somethin" class="struts2.action.Administrator" method="retrieveMailingList">
 			<result name="success">/admin.jsp</result>
 		</action>
 		
