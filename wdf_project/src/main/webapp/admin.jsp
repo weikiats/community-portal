@@ -1,4 +1,5 @@
 <%@ taglib prefix="s" uri ="/struts-tags" %>
+<!DOCTYPE html>
 <div class="admin">
 	<h1>Hello administrator <s:property value="#session.name"/></h1>
 	<p>User interface will be improved in the future</p>
@@ -190,11 +191,9 @@
 			<p><s:a action="SendBulkMail" onclick="return confirm('Upon sending of bulk mail, mailing list will be deleted. Are you sure?')">Send Bulk Mail</s:a></p>
 		</s:if>
 	</s:elseif>
-	
-	
-	<script>
-	window.onload = function() {
-	  document.getElementById("AddMailingList_mailName").focus();
-	};
-	</script>
 </div>
+<script>
+window.onload = function() {
+  document.getElementById("AddMailingList_mailName").focus();
+};
+</script>
