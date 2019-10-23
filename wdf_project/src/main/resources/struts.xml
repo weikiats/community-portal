@@ -127,7 +127,9 @@
 		
 		<action name="DeleteUser" class="struts2.action.Administrator" method="deleteUser">
 			<result name="success">/admin.jsp</result>
-			<result name="input">/admin.jsp</result>
+			<result name="input" type="chain">
+				<param name="actionName">AdminSearchbar</param>
+			</result>
 		</action>
 		
 		<action name="RetrieveMailingList" class="struts2.action.Administrator" method="retrieveMailingList">

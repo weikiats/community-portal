@@ -509,3 +509,29 @@ footer a {
 footer a:hover {
 	text-decoration: underline;
 }
+
+/* admin.jsp
+-------------------*/
+
+.admin {
+	padding: 20px;
+}
+
+.admin-nav {
+	height: 30px;
+	line-height: 30px;
+}
+
+.admin-nav p, .admin-main p {
+	float: left;
+	margin-right: 20px;
+}
+
+.admin-main, .admin-main h2, .admin-main h3, .admin-result {
+	margin: 20px 0;
+}
+
+.admin-main table th, .admin-main table td{
+	text-align: left;
+	padding: 5px 15px 5px 0;
+}
