@@ -1,22 +1,31 @@
 <%@ taglib prefix="s" uri ="/struts-tags" %>
 <!DOCTYPE html>
 <div class="admin">
-	<h1>Hello administrator <s:property value="#session.name"/></h1>
-	<p>User interface will be improved in the future</p>
-	<p><s:a action="Logout">Logout</s:a></p>
-	<h2>Database Search</h2>
-	<s:form action="AdminSearch">
-		<s:textfield name="search" label="Search for a user" required="true" />
-		<s:submit value="Search" />
-	</s:form>
-	<h2>Bulk Mailing</h2>
-	<p><s:a action="RetrieveMailingList">Retrieve Mailing List</s:a></p>
-	<s:if test="result==2">
-		<p><span style="color:red">An error occurred. Please try again.</span></p>
+	<div class="admin-header">
+		<h1>Hello administrator <s:property value="#session.name"/></h1>
+		<div class="admin-nav">
+			<p><s:a action="AdminSearchbar">Database Search</s:a></p>
+			<p><s:a action="RetrieveMailingList">Retrieve Mailing List</s:a></p>
+			<p><s:a action="Logout">Logout</s:a></p>
+		</div>
+	</div>
+	<div class="admin-result">
+		<s:if test="result==2">
+			<p><span style="color:red">An error occurred. Please try again.</span></p>
+		</s:if>
+		<s:elseif test="result==1">
+			<p><span style="color:green">Update success!</span></p>
+		</s:elseif>
+	</div>
+	
+	<s:if test="method=='searchbar'||method=='search'||method=='userProfile'||method=='deleteUser'">
+		<h2>Database Search</h2>
+		<s:form action="AdminSearch">
+			<s:textfield name="search" label="Search for a user" required="true" />
+			<s:submit value="Search" />
+		</s:form>
 	</s:if>
-	<s:elseif test="result==1">
-		<p><span style="color:green">Update success!</span></p>
-	</s:elseif>
+		
 	<s:if test="method=='search'">
 		<s:if test="searchList.size()>0">
 			<table>
@@ -49,6 +58,7 @@
 			<p>No results. Please search again.</p>
 		</s:else>
 	</s:if>
+	
 	<s:elseif test="method=='userProfile'&&result!=2">
 		<h3>User Profile</h3>
 		<table>
@@ -126,6 +136,7 @@
 		<p><a href="AdminChangePassword.action?email=${user.email}&password=password">Reset password to 'password'</a></p>
 		<p><a href="DeleteUser.action?email=${user.email}">Delete user account</a></p>
 	</s:elseif>
+	
 	<s:elseif test="method=='deleteUser'&&result!=2">
 		<h3>User Profile</h3>
 		<table>
@@ -158,6 +169,7 @@
 			<s:submit />
 		</s:form>
 	</s:elseif>
+	
 	<s:elseif test="method=='mailingList'">
 		<h3>Mailing List</h3>
 		<table>
@@ -192,6 +204,7 @@
 		</s:if>
 	</s:elseif>
 </div>
+
 <script>
 window.onload = function() {
   document.getElementById("AddMailingList_mailName").focus();

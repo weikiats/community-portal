@@ -42,6 +42,11 @@ public class Administrator extends ActionSupport {
 	private List<SoftwareEngineerEducation> userEduList;
 	private List<SoftwareEngineerUser> mailList;
 	
+	public String searchbar() {
+		method = "searchbar";
+		return SUCCESS;
+	}
+	
 	public String search() {
 		ApplicationDao dao = new ApplicationDao();
 		ResultSet rs = dao.searchUser(search);

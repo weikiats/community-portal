@@ -103,6 +103,10 @@
 			<result name="success">/updateusereducationSuccess.jsp</result>
 		</action>
 		
+		<action name="AdminSearchbar" class="struts2.action.Administrator" method="searchbar">
+			<result name="success">/admin.jsp</result>
+		</action>
+		
 		<action name="AdminSearch" class="struts2.action.Administrator" method="search">
 			<result name="success">/admin.jsp</result>
 		</action>
@@ -153,6 +157,6 @@
 				<param name="actionName">RetrieveMailingList</param>
 			</result>
 		</action>
-		
+
 	</package>
 </struts>
