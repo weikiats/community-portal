@@ -158,6 +158,9 @@
 			<result name="success" type="chain">
 				<param name="actionName">RetrieveMailingList</param>
 			</result>
+			<result name="input" type="chain">
+				<param name="actionName">RetrieveMailingList</param>
+			</result>
 		</action>
 
 	</package>
