@@ -9,6 +9,7 @@ import java.util.Objects;
 
 import javax.mail.Message.RecipientType;
 
+import org.simplejavamail.MailException;
 import org.simplejavamail.email.Email;
 import org.simplejavamail.email.EmailBuilder;
 import org.simplejavamail.email.Recipient;
@@ -261,7 +262,16 @@ public class Administrator extends ActionSupport {
 				.withTransportStrategy(TransportStrategy.SMTP_TLS)
 				.buildMailer();
 		
-		mailer.sendMail(email, true);
+		try {
+			mailer.validate(email);
+		} catch (MailException ex) {
+			System.out.println("Validation failed");
+			ex.printStackTrace();
+			result = 2;
+			return "input";
+		} 
+		
+		mailer.sendMail(email);
 		
 		dao.deleteMailingList();
 		
