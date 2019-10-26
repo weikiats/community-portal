@@ -17,7 +17,7 @@ import struts2.dao.ApplicationDao;
  * Invalidate session objects created for logout.
  *
  */
-public class UserLogin extends ActionSupport implements SessionAware{
+public class UserLogin extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;
 	
 	private String email;
